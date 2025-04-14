@@ -4,13 +4,14 @@
 <br/>
 <div >
     <label>name:</label>
-    <input type="text"  (keypress)="handleChangeName($event)"  placeholder="please inter your name" >
+    <input type="text"  (input)="handleChangeName($event)"  placeholder="please inter your name" >
 </div>
 <br/>
-<div class="col co" >
+<div class="col" >
     <label>Family:</label>
-    <input type="text"  (keypress)="handleChangeFamily($event)"  placeholder="please inter your Family" >
+    <input type="text" [(ngModel)]="FullName_home.Family"  placeholder="please inter your Family" >
 </div>
+<br/>
 
 <button class="btn btn-primary">Add</button>
 
