@@ -4,11 +4,13 @@
 <br/>
 <div >
     <label>name:</label>
-    <input type="text"  (change)="handleChangeName($event)"  placeholder="please inter your name" >
+    <input type="text"  (keypress)="handleChangeName($event)"  placeholder="please inter your name" >
 </div>
 <br/>
-<div >
+<div class="col co" >
     <label>Family:</label>
-    <input type="text"  (change)="handleChangeFamily($event)"  placeholder="please inter your Family" >
+    <input type="text"  (keypress)="handleChangeFamily($event)"  placeholder="please inter your Family" >
 </div>
+
+<button class="btn btn-primary">Add</button>
 
