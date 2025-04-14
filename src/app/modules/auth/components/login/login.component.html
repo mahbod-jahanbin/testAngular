@@ -8,10 +8,11 @@
       placeholder="Ex. pat@example.com"
     />
   </mat-form-field>
+  <br/>
   <mat-form-field class="example-full-width">
     <mat-label>گذرواژه</mat-label>
     <input
-      type="email"
+      type="password"
       matInput
       [formControl]="password"
       placeholder="Ex. pat@example.com"
@@ -19,8 +20,8 @@
   </mat-form-field>
 </form>
 
-HTML TS CSS
+
 <div class="example-button-row">
   <button mat-button (click)="submit()">ورود</button>
 </div>
-{{ form.value | json }}
+<!-- {{ form.value | json }} -->

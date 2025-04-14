@@ -5,6 +5,7 @@ import { LoginComponent } from './modules/auth/components/login/login.component'
 
 export const routes: Routes = [
   {
+    //روت اصلی سایت
     path: '',
     component: LoginComponent
   },

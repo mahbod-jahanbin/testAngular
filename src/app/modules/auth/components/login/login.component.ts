@@ -10,6 +10,9 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../../shared/services/api.service';
+import { LoginModel } from '../../../landing/models/login-info.model';
+import { LoginInfo } from '../../../landing/models/login.model';
+import { MatButtonModule } from '@angular/material/button';  // وارد کردن MatButtonModule
 
 @Component({
   selector: 'app-login',
@@ -18,6 +21,7 @@ import { ApiService } from '../../../shared/services/api.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -33,6 +37,7 @@ export class LoginComponent implements OnInit {
   get userName(): FormControl {
     return this.form.get('userName') as FormControl;
   }
+
 
   get password(): FormControl {
     return this.form.get('password') as FormControl;
@@ -50,9 +55,9 @@ export class LoginComponent implements OnInit {
       alert('همه اطلاعات را وارد نمایید');
       return;
     }
-    let body = {
-      Username: this.form.value.userName,
-      Password: this.form.value.password,
+    let body: LoginInfo = {
+      username: this.form.value.userName,
+      password: this.form.value.password,
       Serial: 'mahbod',
       Token: '',
       SkipItem: '0',
@@ -63,8 +68,9 @@ export class LoginComponent implements OnInit {
         'yFflGosUVRE6Yaz704JHtmvso5X2b8DPBIuMb1ImscWsHMzPLbncAefWA6O2tbut6mq47cRNgGopcvffdHr/LJEiuXcl1cRcXh53w8Sx/7xpIVvbBaxOFp3HnWluS054',
     };
 
-    this.apiService.post('InternalApp/UserLogin', body).subscribe({
+    this.apiService.post<LoginModel>('InternalApp/UserLogin', body).subscribe({
       next: (response) => {
+        
         debugger;
       },
       error: (error) => {
