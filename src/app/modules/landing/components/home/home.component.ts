@@ -14,6 +14,9 @@ import { StarComponent } from "../star/star.component";
 export class HomeComponent {
   title = 'Home';
 
+
+  
+
   public viewModel = new myStr('Mahbod', 'Jahanbin');
 
   public handleChangeName(change: Event) {
