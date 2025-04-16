@@ -27,6 +27,7 @@ export class HomeComponent {
   ratings:number[]=[3.5,2.5,1.5,4.5,2];
 
  public onStarClicked(rating:number){
+
     console.log(`the rating is ${rating}`);
   }
     // public handleChangeFamily(change: Event) {
