@@ -1,25 +1,36 @@
+<app-star *ngFor="let rating of ratings" [rating]="rating" (starClicked)="onStarClicked($event)"></app-star>
+
+
 <div class="text-center">
-    <p *ngIf="viewModel.Name else ElseCondName" >{{viewModel.Name}}</p>
-    <ng-template #ElseCondName>مقدار نام خالی است </ng-template>
-    <p *ngIf="viewModel.Family else ElseCondFamily" >{{viewModel.Family}}</p>
-    <br/>
-    <ng-template #ElseCondFamily>مقدار نام خانوادگی خالی است </ng-template>
+  <p *ngIf="viewModel.Name; else ElseCondName">{{ viewModel.Name }}</p>
+  <ng-template #ElseCondName>مقدار نام خالی است </ng-template>
+  <p *ngIf="viewModel.Family; else ElseCondFamily">{{ viewModel.Family }}</p>
+  <br />
+  <ng-template #ElseCondFamily>مقدار نام خانوادگی خالی است </ng-template>
 </div>
 
-<br/>
-<div >
-    <label>name:</label>
-    <input type="text"  (input)="handleChangeName($event)"  placeholder="please inter your name" >
+<br />
+<div>
+  <label>name:</label>
+  <input
+    type="text"
+    (input)="handleChangeName($event)"
+    placeholder="please inter your name"
+  />
 </div>
-<br/>
-<div class="col" >
-    <label>Family:</label>
-    <input type="text" [(ngModel)]="viewModel.Family"  placeholder="please inter your Family" >
+<br />
+<div class="col">
+  <label>Family:</label>
+  <input
+    type="text"
+    [(ngModel)]="viewModel.Family"
+    placeholder="please inter your Family"
+  />
 </div>
-<br/>
+<br />
 
-
-<p *ngFor="let item of users let i=index">{{i+"-"+item}}</p>
+<p *ngFor="let item of users; let i = index">{{ i + "-" + item }}</p>
 
 <button class="btn btn-primary">Add</button>
+
 

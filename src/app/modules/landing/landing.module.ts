@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from '../../app.component';
 import { HomeComponent } from './components/home/home.component';
+import { StarComponent } from './components/star/star.component';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     CommonModule,
     FormsModule,
-    HomeComponent
+    HomeComponent,
+    StarComponent,
+    AppComponent
   ],
 })
 export class LandingModule {}
