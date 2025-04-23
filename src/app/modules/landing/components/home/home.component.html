@@ -29,8 +29,18 @@
 </div>
 <br />
 
-<p *ngFor="let item of users; let i = index">{{ i + "-" + item }}</p>
 
-<button class="btn btn-primary">Add</button>
+
+<button class="btn btn-primary ">Add</button>
+
+
+<select style="margin-left: 20px;" [(ngModel)]="selectedUser" (change)="OnselectChange(selectedUser)">
+  <ng-container *ngFor="let item of usrs; ">
+    <ng-container *ngIf="item.age>0">
+      <option [ngValue]="item">{{   item.name + ' ' + item.familyName }}</option>
+    </ng-container>
+  </ng-container>
+</select>
+
 
 
