@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input, OnChanges, OnInit } from '@angular/core';
 import myStr from '../../models/my-str';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -13,11 +13,29 @@ import { Iuser } from '../../models/Iuser';
   imports: [FormsModule, CommonModule, StarComponent],
 providers: [],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   title = 'Home';
 
 
+  private _user:Iuser;
+  counter:number=0;
+
+ @Input()
+  set user(user:Iuser){
+    this._user=user;
+    this.counter++;
   
+  }
+  get user():Iuser{
+ return this._user
+  }
+
+
+ngOnInit():void{
+  console.log(this._user);
+}
+
+
 
   public viewModel = new myStr('Mahbod', 'Jahanbin');
 
@@ -79,3 +97,6 @@ console.log(`the selected user is ${user.name}`);
   //   this.FullName_home.Family = myInput.value;
   // }
 }
+
+ 
+

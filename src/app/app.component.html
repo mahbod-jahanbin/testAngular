@@ -3,3 +3,12 @@
     
   </router-outlet>
 </div> 
+<!-- <app-home [user]="user"></app-home> -->
+
+<select (change)="onSelectChanges($event)">
+  <ng-container *ngFor="let user of users">
+    <option *ngIf="user.age > 10" [ngValue]="user">{{ user.name }}</option>
+  </ng-container>
+</select>
+<br/>
+<input class="mt-5" type="text" appColorful >
