@@ -12,25 +12,14 @@
 <br />
 <div>
   <label>name:</label>
-  <input
-    type="text"
-    (input)="handleChangeName($event)"
-    placeholder="please inter your name"
-  />
+  <input type="text" (input)="handleChangeName($event)"placeholder="please inter your name"/>
 </div>
 <br />
 <div class="col">
   <label>Family:</label>
-  <input
-    type="text"
-    [(ngModel)]="viewModel.Family"
-    placeholder="please inter your Family"
-  />
+  <input type="text"[(ngModel)]="viewModel.Family" placeholder="please inter your Family" />
 </div>
 <br />
-
-
-
 <button class="btn btn-primary ">Add</button>
 
 
